@@ -31,7 +31,7 @@
 
 # plt.show()
 
-# seaborn을 불러들여옵니다.
+
 # import seaborn as stat_sb
 # import matplotlib.pyplot as plt
 

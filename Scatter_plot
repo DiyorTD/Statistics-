@@ -1,0 +1,10 @@
+import seaborn as sb
+import matplotlib.pyplot as plt
+
+df = sb.load_dataset('tips')
+df.head()
+
+sb.relplot(x="total_bill", y = "tip",hue = 'size', size ='size',  data= df) 
+
+print(df.head())
+plt.show()

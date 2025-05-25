@@ -1,0 +1,31 @@
+import pandas as pd
+df = pd.read_excel("exercise_1_basic.xlsx")
+print(df)
+print(df.info())
+print(df.describe())
+
+print(df[(df['A Process']>3.10) & (df['B Process']>2.05)])
+
+con1 = df['A Process']> 3.10
+con2 = df['B Process']> 2.05
+con3 = [con1 & con2]
+
+print(df[con1 & con2])
+
+print(con3)
+
+
+df['A+B'] = df['A Process'] + df['B Process']
+print(df.info())
+
+print(df.describe())
+
+
+df_sorted = df.sort_values(by= ['A Process'])
+#ascending = False => aslo you can you use it in the (by= ['A Process'], ascending = False )
+print(df_sorted)
+
+df['A Level'] = df['A Process'] // 3
+df_sorted = df.sorted_values(by = ['A Level', 'B Process'])
+print(df_sorted)
+

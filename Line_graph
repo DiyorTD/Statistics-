@@ -1,0 +1,7 @@
+import matplotlib.pyplot as plt
+import seaborn as sb
+
+fmri = sb.load_dataset("fmri")
+fmri.head()
+
+sb.relplot(x="timepoint",y="signal",hue="event", style="event",dashes=False, markers=True, kind="line", data=fmri)

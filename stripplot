@@ -1,0 +1,10 @@
+import seaborn as sb
+import matplotlib.pyplot as plt
+
+df = sb.load_dataset('tips')
+print(df)
+df.head(10)
+filtered = df[df['tip']<=3]
+sb.stripplot(x='time', y='tip', data= filtered)
+
+plt.show()

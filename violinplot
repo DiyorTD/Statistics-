@@ -1,0 +1,9 @@
+import seaborn as sb
+import matplotlib.pyplot as plt
+
+df = sb.load_dataset('tips')
+print(df)
+
+sb.violinplot(x='time', y='tip', data= df)
+
+plt.show()

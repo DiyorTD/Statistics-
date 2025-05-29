@@ -1,0 +1,40 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+data = np.random.normal(0,1, size = (100,9))
+
+data[:,0:3] = data[:, 0:3] + 3
+data[:,6: ] = data[:, 6:] - 3
+
+colors = ['tab:blue',   
+          'tab:brown',
+          'tab:green',
+          'tab:red',
+          'tab:purple',
+          'tab:pink',
+          'tab:olive',
+          'tab:cyan',
+          'tab:gray'          
+]
+
+plt.figure(figsize=(12,3))
+
+for i, c in enumerate(colors):
+    _= plt.boxplot(data[:,i],
+                    labels=[c],
+                    positions =[i],
+                    widths =0.5,
+                    vert =True,
+                    patch_artist =True,
+                    boxprops = dict(facecolor=c, color='k'),
+                    medianprops = dict(color='k'))
+
+_= plt.xticks(rotation =60, fontsize=13)
+_= plt.yticks(fontsize=13)
+_= plt.ylabel('numbers', fontsize=13) 
+
+plt.grid(color ='grey',linestyle='-', linewidth=0.5, axis='y')
+
+
+plt.show()

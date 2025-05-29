@@ -1,0 +1,9 @@
+import seaborn as sb
+import matplotlib.pyplot as plt
+
+penguins = sb.load_dataset('penguins')
+print(penguins)
+sb.set_theme()
+sb.displot(penguins, x = 'flipper_length_mm', hue= 'sex')
+
+plt.show()
